@@ -18,7 +18,7 @@ The Weather API provides up-to-date weather information for any location in the 
 The Cocktails API provides recipes for a variety of cocktails, as well as information about their ingredients and preparation.
 
 * Jokes & Quotes
-The Jokes & Quotes API provides a collection of jokes and inspirational quotes that can be shared or used to brighten up your day.
+The Jokes & Quotes API provides a collection of jokes & inspirational quotes that can be shared or used to brighten up your day.
 
 # Technologies Used
 AllInOneAPI was built with ASP.NET Web API and uses HTML, CSS, and JavaScript for the front-end.
