@@ -23,6 +23,13 @@ The Jokes & Quotes API provides a collection of jokes and inspirational quotes t
 # Technologies Used
 AllInOneAPI was built with ASP.NET Web API and uses HTML, CSS, and JavaScript for the front-end.
 
+# Key Features:
+* Multiple APIs in one platform
+* User-friendly interface for easy navigation and interaction
+* Real-time weather updates
+* Random cat photos with humorous captions
+* Wide variety of cocktail recipes
+* Collection of jokes and inspirational quotes
 # Future Plans
 I am constantly working to improve AllInOneAPI and add new APIs to this platform. In the future, I plan to add support for additional APIs, as well as to implement new features and functionality that will make the app even more useful and user-friendly.
 
