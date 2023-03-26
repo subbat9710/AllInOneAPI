@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <title>All in One</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header id="page-header">
+            <img src="img/allinone.png"/>
+            <h1>All In One</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Stories</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Subscribe</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="left-panel">
+            <article id="weather">
+                <header>Weather</header>
+                    <input type="text" id="search_input" name="location" value="Search Location">
+                    <button id="search_btn">Search</button>
+                    <p id="weather_location"></p>
+                    <p id="weather_country"></p>
+                    <img id="weather_icon">
+                    <p id="temperature_f"></p>
+                    <p id="local_time"></p>
+                    <p id="weather_humidity"></p>
+                    <p id="weather_text"></p>
+            </article>
+            <article>
+                <header>CatCards</header>
+                    <img id="cat_pic">
+                    <p id="cat_fact"></p>
+            </article> 
+            <button id="next_btn" type="button">&#8680; Refresh To See Next</button>           
+        </section>
+        <main>
+            <header>Astronomer Photo of the day</header>
+            <article>
+                <img id="nasa_pic">
+                <h3 id="nasa_title"></h3>
+                <p id="nasa_caption"></p>
+            </article>
+        </main>
+        <aside id="special">
+            <article>
+                <header>Quote of the day</header>
+                <p id="quote_daily"></p>               
+                <p id="quote_author"></p> 
+            </article>
+            <article>
+                <header>Cocktails</header>
+                <img id="drinks_img">
+                <p id="drinks_instruction"></p>
+            </article>
+            <aside id="jokes">
+                <article>
+                    <header>Chuck Norris Jokes</header>
+                    <img id="chuk_img" src="img/jokes.png">
+                    <p id="chuck_jokes"></p>
+                </article>
+                <!-- <article>
+                    <h2>Your Collection</h2>
+                    <div id="collection"></div>
+                </article> -->
+            </aside>
+        </aside>
+        <footer>
+            <p>Thank you for visiting! Copyright &copy; 2023</p>
+        </footer>
+    </div>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
