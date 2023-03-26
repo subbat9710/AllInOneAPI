@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "7U6eMtndbK09swBAtvyr2OhI5DKo313l4qm1ZVT+lENp/WNjz1efMYSnDzdMT0sfyQ8RzM426AHkpR6lkWv9Jw==",
+  "dgSpecHash": "Fza/b4QG4rSww/P5ix653gybjG8KY6CbzGoy43MnJhGNEyKq3mKFUVXx5z2ioG54jSv++G4bCCMvNfrxsKGevA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Student\\workspace\\side-projects\\NasaSpaceInfo\\NasaSpaceInfo\\NasaSpaceInfo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Student\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Student\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Student\\.nuget\\packages\\restsharp\\106.15.0\\restsharp.106.15.0.nupkg.sha512",
     "C:\\Users\\Student\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\Student\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

@@ -17,7 +17,7 @@ namespace NasaSpaceInfo.Service
             request.AddParameter("app_id", APP_ID);
             request.AddParameter("app_key", APP_KEY);
             request.AddParameter("nutrition-type", "cooking");
-            request.AddParameter("ingr", "Apple");
+            request.AddParameter("ingr", ingr);
             IRestResponse<Nutrient> response = client.Get<Nutrient>(request);
             if (response.ResponseStatus == ResponseStatus.Completed && response.IsSuccessful)
             {
@@ -28,5 +28,6 @@ namespace NasaSpaceInfo.Service
                 return null;
             }
         }
+
     }
 }

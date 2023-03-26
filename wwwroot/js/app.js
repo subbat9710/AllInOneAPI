@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Use default location
         getWeatherData('pittsburgh');
     }
+    
     getAll();
 });
 
@@ -93,8 +94,38 @@ function getWeatherData(location){
                 body.style.position = 'relative'; 
                 body.insertAdjacentHTML('beforeend', '<div class="overlay"></div>');
                 break;
+            case 'overcast':
+                body.style.backgroundImage = "url('https://www.adventurebikerider.com/wp-content/uploads/2017/10/tumblr_o27c7fByaO1tchrkco1_500.gif')";
+                body.style.backgroundSize = 'cover'; 
+                body.style.position = 'relative'; 
+                body.insertAdjacentHTML('beforeend', '<div class="overlay"></div>');
+                break;
+            case 'light snow':
+                body.style.backgroundImage = "url('https://media.tenor.com/UQcABowZjPIAAAAC/snow-snowing.gif')";
+                body.style.backgroundSize = 'cover'; 
+                body.style.position = 'relative'; 
+                body.insertAdjacentHTML('beforeend', '<div class="overlay"></div>');
+                break;
+            case 'heavy snow':
+                body.style.backgroundImage = "url('https://media.tenor.com/twR0LCb2RgkAAAAM/moon-winter.gif')";
+                body.style.backgroundSize = 'cover'; 
+                body.style.position = 'relative'; 
+                body.insertAdjacentHTML('beforeend', '<div class="overlay"></div>');
+                break;
+            case 'mist':
+                body.style.backgroundImage = "url('https://i.gifer.com/CKtq.gif')";
+                body.style.backgroundSize = 'cover'; 
+                body.style.position = 'relative'; 
+                body.insertAdjacentHTML('beforeend', '<div class="overlay"></div>');
+                break;
+            case 'fog':
+                body.style.backgroundImage = "url('https://imageresizer.static9.net.au/bFAAnuFoboPhJz30cM5TR0ia7ls=/360x203/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F06a47928-bcab-4364-bf17-e2b1021f446a')";
+                body.style.backgroundSize = 'cover'; 
+                body.style.position = 'relative'; 
+                body.insertAdjacentHTML('beforeend', '<div class="overlay"></div>');
+                break;
             default:
-                body.style.backgroundImage = "url('https://gifdb.com/images/high/aesthetic-anime-heavy-rain-splash-jeajbmb2ohg1x7z3.gif')";
+                body.style.backgroundImage = "url('https://imageresizer.static9.net.au/bFAAnuFoboPhJz30cM5TR0ia7ls=/360x203/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F06a47928-bcab-4364-bf17-e2b1021f446a')";
                 body.style.backgroundSize = 'cover'; 
                 body.style.position = 'relative'; 
                 body.insertAdjacentHTML('beforeend', '<div class="overlay"></div>');
@@ -131,7 +162,22 @@ function getAll(){
         nasaData['chuckJokes'] = data.chuckJokes;
         nasaData['strDrinkThumb'] = data.strDrinkThumb;
         nasaData['strInstructions'] = data.strInstructions;
-        nasa_pic.setAttribute('src', data.imgUrl);
+
+        if (data.imgUrl.includes('vimeo.com')) {
+            const videoId = data.imgUrl.split('/').pop();
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://player.vimeo.com/video/${videoId}`;
+            iframe.width = '100%';
+            iframe.height = '470';
+            iframe.frameborder = '0';
+            iframe.allowfullscreen = true;
+            nasa_pic.appendChild(iframe);
+        } else {
+            const image = document.createElement('img');
+            image.src = data.imgUrl;
+            nasa_pic.appendChild(image);
+        }
+      //  nasa_pic.setAttribute('src', data.imgUrl);
         nasa_title.innerText = data.title;
         nasa_caption.innerText = data.explanation;
         quote_author.innerText = "- " + data.author;
