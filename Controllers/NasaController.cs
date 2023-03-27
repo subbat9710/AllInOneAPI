@@ -89,6 +89,30 @@ namespace NasaSpaceInfo.Controllers
                 return NotFound();
             }
         }
+        [HttpGet("{amount:int}/coins")]
+        public ActionResult<IDictionary<string, int>> GetCoins(int amount)
+        {
+            Dictionary<string, int> change = new Dictionary<string, int>();
+            Dictionary<string, int> coins = new Dictionary<string, int>()
+            {
+                {"Quarter", 25 },
+                {"Dime", 10 },
+                {"Nickel", 5 },
+                {"Penny", 1 }
+            };
+
+            foreach (KeyValuePair<string, int> coin in coins)
+            {
+                if (amount >= coin.Value)
+                {
+                    int countCoins = amount / coin.Value;
+                    change[coin.Key] = countCoins;
+                    amount -= coin.Value * countCoins;
+                }
+            }
+
+            return Ok(change);
+        }
         //[HttpGet("{ingr}")]
         //public ActionResult<Nutrient> GetHealthTips(string ingr)
         //{

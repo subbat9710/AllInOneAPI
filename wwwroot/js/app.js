@@ -15,6 +15,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    //coin changer
+   function attachClickEvent() {
+      document.getElementById('change_btn').addEventListener('click', () => {
+         const amount_input = document.getElementById('amount_input');
+         const amount = amount_input.value;
+         if (amount) {
+              getCoin(amount);
+         }
+     });
+    }
+    attachClickEvent();
+
+    document.getElementById('change_btn').addEventListener('dblclick', () => {
+    attachClickEvent();
+    });
    //Current Location 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
@@ -124,8 +139,14 @@ function getWeatherData(location){
                 body.style.position = 'relative'; 
                 body.insertAdjacentHTML('beforeend', '<div class="overlay"></div>');
                 break;
+            case 'patchy rain possible':
+                body.style.backgroundImage = "url('https://64.media.tumblr.com/ccffe7fe87cffe475a16916afecf2570/fbeddcbc3b13643b-47/s540x810/fb4ec14a0aa57a9b7f09b13bafd5083acd666480.gif')";
+                body.style.backgroundSize = 'cover'; 
+                body.style.position = 'relative'; 
+                body.insertAdjacentHTML('beforeend', '<div class="overlay"></div>');
+                break;
             default:
-                body.style.backgroundImage = "url('https://imageresizer.static9.net.au/bFAAnuFoboPhJz30cM5TR0ia7ls=/360x203/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F06a47928-bcab-4364-bf17-e2b1021f446a')";
+                body.style.backgroundImage = "url('https://64.media.tumblr.com/ccffe7fe87cffe475a16916afecf2570/fbeddcbc3b13643b-47/s540x810/fb4ec14a0aa57a9b7f09b13bafd5083acd666480.gif')";
                 body.style.backgroundSize = 'cover'; 
                 body.style.position = 'relative'; 
                 body.insertAdjacentHTML('beforeend', '<div class="overlay"></div>');
@@ -189,7 +210,60 @@ function getAll(){
         drinks_instruction.innerText = data.strInstructions;
     });
 }
-
+function getCoin() {
+        const form = document.getElementById('coin-form');
+        const quarterImg = document.getElementById('quarter_img');
+        const dimeImg = document.getElementById('dime_img');
+        const nickelImg = document.getElementById('nickel_img');
+        const pennyImg = document.getElementById('penny_img');
+        const quarterText = document.getElementById('quarter_text');
+        const dimeText = document.getElementById('dime_text');
+        const nickelText = document.getElementById('nickel_text');
+        const pennyText = document.getElementById('penny_text');
+      
+        form.addEventListener('submit', event => {
+          event.preventDefault();
+          const amountInput = document.getElementById('amount_input');
+          const amount = amountInput.value;
+          if(amount){
+            fetch(`https://localhost:44356/api/nasa/${amount}/coins`)
+              .then(response => response.json())
+              .then(data => {
+                if(data.Quarter > 0) {
+                  quarterText.innerText = `Quarter: ${data.Quarter}`;
+                  quarterImg.style.display = 'block';
+                } else {
+                  quarterText.innerText = '';
+                  quarterImg.style.display = 'none';
+                }
+      
+                if(data.Dime > 0) {
+                  dimeText.innerText = `Dime: ${data.Dime}`;
+                  dimeImg.style.display = 'block';
+                } else {
+                  dimeText.innerText = '';
+                  dimeImg.style.display = 'none';
+                }
+      
+                if(data.Nickel > 0) {
+                  nickelText.innerText = `Nickel: ${data.Nickel}`;
+                  nickelImg.style.display = 'block';
+                } else {
+                  nickelText.innerText = '';
+                  nickelImg.style.display = 'none';
+                }
+      
+                if(data.Penny > 0) {
+                  pennyText.innerText = `Penny: ${data.Penny}`;
+                  pennyImg.style.display = 'block';
+                } else {
+                  pennyText.innerText = '';
+                  pennyImg.style.display = 'none';
+                }
+              });
+            }
+        });
+    }
 // function gerWeatherData(location) {
 //     const weather_location = document.getElementById('weather_location');
 //     const weather_country = document.getElementById('weather_country');

@@ -23,7 +23,7 @@ aside#special {
 aside#jokes {
     grid-area: jokes;
 }
-footer {
+#footer {
     grid-area: footer;
 }
 div.container {
@@ -48,6 +48,15 @@ main > article > div {
     border-radius: 15px;
     overflow: hidden;
 }
+
+main > article > div > img {
+    width: 100%;
+    height: 770px;
+    object-fit: cover;
+    object-position: bottom;
+    border-radius: 15px;
+    overflow: hidden;
+}
 main > header {
     text-align: center;
     font-weight: bold;
@@ -60,6 +69,7 @@ main > article > p {
 #page-header > h1 {
     font-family: 'Playfair Display', serif;
     text-transform: uppercase;
+    font-size: 3.6em;
 }
 div.container > main > article {
     border: 1px solid silver;
@@ -99,12 +109,12 @@ div.container > main > article {
 #left-panel > article > header {
     text-align: center;
     font-size: large;
-    margin: 0px;
-    font-size: 140%;
+    margin: 0;
+    font-size: 130%;
     font-weight: bold;
-    font-family:Arial, Helvetica, sans-serif;
-    color: rgb(194, 240, 240);
-    background-color: rgb(98, 117, 224);
+    font-family: 'Playfair Display', serif;
+    color: rgb(1, 5, 5);
+    background-color: #87CEFA;
 }
 #left-panel > article#weather p {
     margin: 0px;
@@ -117,10 +127,33 @@ div.container > main > article {
     position: absolute;
     left: 5%;
 }
+#left-panel article#coinchanger img{
+    width: 30%;
+    margin: auto;
+    padding: auto;
+}
+#left-panel article#coinchanger p {
+    font-size: medium;
+    margin: 0px;
+    font-weight: bold;
+}
+#left-panel article#coinchanger input{
+    width: 60%;
+    margin-top: 10px;
+}
+
 aside article{
     border-radius: 8px;
     padding: 10px;
     margin: 10px;
+}
+aside#special header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 130%;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background-color:rgb(241, 148, 220);
 }
 aside#special article {
     color: black;
@@ -129,21 +162,29 @@ aside#special article {
     font-size: 120%;
     text-align: center;
 }
-aside#special article img {
+aside#cocktail article img {
     width: 100%;
+}
+aside#cocktail article {
+    color: black;
+    background-color: rgb(191, 176, 231);
+    border: 1px solid rgb(95, 74, 21);
+    font-size: 120%;
+    text-align: center;
+}
+aside#cocktail header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 130%;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background-color:rgb(143, 219, 128);
 }
 aside#jokes article {
     color: black;
     background-color: rgb(148, 190, 245);
     border: 1px solid darkblue;
     font-size: 20px;
-}
-aside header {
-    text-align: center;
-    font-weight: bold;
-    font-size: 138%;
-    font-family:Arial, Helvetica, sans-serif;
-    background-color:rgb(238, 163, 163);
 }
 aside article p#quote_author {
     font-weight: bold;
@@ -152,11 +193,18 @@ aside#jokes article img {
     width: 50%;
     margin: 10px;
 }
-  
-footer {
+aside#jokes header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 130%;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background-color:rgb(58, 192, 233);
+}
+#footer {
     box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
     font-size: large;
     text-align: center;
 }
@@ -209,10 +257,6 @@ footer {
 
     #weather article section p {
         display: flexbox;
-    }
-    footer {
-        padding: 0px;
-        margin: 0px;
     }
   }
   @media screen and (max-width: 536px) {
@@ -284,7 +328,4 @@ footer {
         object-position: bottom;
         border-radius: 15px;  
     }  
-    main > header {
-        font-size: 25px;
-    }
 }

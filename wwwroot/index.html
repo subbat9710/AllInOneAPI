@@ -34,7 +34,32 @@
                     <p id="weather_humidity"></p>
                     <p id="weather_text"></p>
             </article>
-            <article>
+            <article id="coinchanger">
+                <header>Coin Changer</header>
+                <form id="coin-form">
+                  <input type="text" id="amount_input" name="amount" placeholder=" Enter Change Amount:"><br>
+                  <button id="change_btn" type="submit">Convert</button><br>
+                </form>
+                <div id="result">
+                  <div id="quarter">
+                    <p id="quarter_text"></p>
+                    <img id="quarter_img" src="img/quarter.png" alt="quarter" style="display: none;">
+                  </div>
+                  <div id="dime">
+                    <p id="dime_text"></p>
+                    <img id="dime_img" src="https://upload.wikimedia.org/wikipedia/commons/d/d9/2017-D_Roosevelt_dime_reverse_transparent.png" alt="dime" style="display: none;">
+                  </div>
+                  <div id="nickel">
+                    <p id="nickel_text"></p>
+                    <img id="nickel_img" src="img/nickel.png" alt="nickel" style="display: none;">
+                  </div>
+                  <div id="penny">
+                    <p id="penny_text"></p>
+                    <img id="penny_img" src="img/penny.png" alt="penny" style="display: none;">
+                  </div>
+                </div>
+              </article>
+              <article>
                 <header>CatCards</header>
                     <img id="cat_pic">
                     <p id="cat_fact"></p>
@@ -55,22 +80,24 @@
                 <p id="quote_daily"></p>               
                 <p id="quote_author"></p> 
             </article>
+        <aside id="cocktail">
             <article>
                 <header>Cocktails</header>
                 <img id="drinks_img">
                 <p id="drinks_instruction"></p>
             </article>
-            <aside id="jokes">
-                <article>
-                    <header>Chuck Norris Jokes</header>
-                    <img id="chuk_img" src="img/jokes.png">
-                    <p id="chuck_jokes"></p>
-                </article>
+        </aside>
+        <aside id="jokes">
+            <article>
+                <header>Chuck Norris Jokes</header>
+                <img id="chuk_img" src="img/jokes.png">
+                <p id="chuck_jokes"></p>
+            </article>
                 <!-- <article>
                     <h2>Your Collection</h2>
                     <div id="collection"></div>
                 </article> -->
-            </aside>
+        </aside>
         </aside>
         <footer>
             <p>Thank you for visiting! Copyright &copy; 2023</p>
