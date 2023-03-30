@@ -7,7 +7,7 @@ namespace NasaSpaceInfo.Service
     public class ImageApiService : ICreateImage
     {
         private const string API_URL = "https://api.openai.com/v1/images/generations";
-        private const string API_KEY = "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";
+        private const string API_KEY = "";
         private readonly RestClient client;
 
         public ImageApiService()

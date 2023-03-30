@@ -7,7 +7,7 @@ namespace NasaSpaceInfo.Service
     public class WeatherApiService : IWeather
     {
         private const string API_URL = "http://api.weatherapi.com/v1/current.json";
-        private const string API_KEY = "18d67ad2c126487ea3343917232503";
+        private const string API_KEY = "";
         private readonly RestClient client = new RestClient();
 
 
