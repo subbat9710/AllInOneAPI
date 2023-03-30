@@ -22,8 +22,9 @@ namespace NasaSpaceInfo.Controllers
         private IWeather weather;
         private IHealth health;
         private IDrinks drinks;
+        private ICreateImage createImage;
 
-        public NasaController(IApod _apod, IQuote _quote, ICatPic _catPic, ICatFact _catFact, IChuckJokes _chuckJokes, ICatFactDao _catFactDao, IWeather _weather, IHealth _health, IDrinks _drinks)
+        public NasaController(IApod _apod, IQuote _quote, ICatPic _catPic, ICatFact _catFact, IChuckJokes _chuckJokes, ICatFactDao _catFactDao, IWeather _weather, IHealth _health, IDrinks _drinks, ICreateImage _createImage)
         {
             this.apod = _apod;
             this.quote = _quote;
@@ -34,6 +35,7 @@ namespace NasaSpaceInfo.Controllers
             this.weather = _weather;
             this.health = _health;
             this.drinks = _drinks;
+            this.createImage = _createImage;
         }
 
         [HttpGet]
@@ -58,7 +60,7 @@ namespace NasaSpaceInfo.Controllers
                 CatFact = newCatFact.Text,
                 ChuckJokes = newChuckJoke.Value,
                 strDrinkThumb = newDrinks.strDrinkThumb,
-                strInstructions = newDrinks.strInstructions
+                strInstructions = newDrinks.strInstructions          
             };
             return nasaDaily;
         }
@@ -112,6 +114,13 @@ namespace NasaSpaceInfo.Controllers
             }
 
             return Ok(change);
+        }
+        [HttpPost]
+        public ActionResult<CreateImageResponse> CreateImage(CreateImageRequest createImageRequest)
+        {
+            ImageApiService imageApiService = new ImageApiService();
+            CreateImageResponse createImageResponse = imageApiService.PostImage(createImageRequest);
+            return createImageResponse;
         }
         //[HttpGet("{ingr}")]
         //public ActionResult<Nutrient> GetHealthTips(string ingr)

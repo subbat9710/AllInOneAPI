@@ -39,6 +39,7 @@ namespace NasaSpaceInfo
             services.AddTransient<IWeather>(sp => new WeatherApiService());
             services.AddTransient<IHealth>(sp => new HealthApiService());
             services.AddTransient<IDrinks>(sp => new CocktailApiService());
+            services.AddTransient<ICreateImage>(sp => new ImageApiService());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

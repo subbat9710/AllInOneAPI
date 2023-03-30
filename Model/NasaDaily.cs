@@ -16,5 +16,7 @@ namespace NasaSpaceInfo.Model
         public string ChuckJokes { get; set; }
         public string strInstructions { get; set; }
         public string strDrinkThumb { get; set; }
+        public int Creadted { get; set; }
+        public List<string> imageList { get; set; } = new List<string>();
     }
 }

@@ -51,7 +51,6 @@ main > article > div {
 
 main > article > div > img {
     width: 100%;
-    height: 770px;
     object-fit: cover;
     object-position: bottom;
     border-radius: 15px;
@@ -122,11 +121,11 @@ div.container > main > article {
 #left-panel > article#weather input {
     margin: 10px;
 }
-#left-panel #next_btn {
+/* #left-panel #next_btn {
     margin: 0;
     position: absolute;
     left: 5%;
-}
+} */
 #left-panel article#coinchanger img{
     width: 30%;
     margin: auto;
@@ -141,7 +140,37 @@ div.container > main > article {
     width: 60%;
     margin-top: 10px;
 }
-
+#left-panel article#coinchanger header{ 
+    background-color: rgb(229, 170, 143);
+    margin: 5px;
+}
+#left-panel article#createImage img{
+    border: 1px solid darkgoldenrod;
+    border-color: blue;
+    margin: 5px;
+}
+#left-panel article#createImage{
+    border-color: rgb(8, 128, 40);
+    background-color: rgb(169, 214, 117);
+    margin: 10px;
+}
+#left-panel article#createImage header{
+    background-color: rgb(187, 154, 218);
+    margin: 5px;
+}
+#left-panel article#createImage label{
+    font-size: medium;
+    font-weight: bold;
+    margin: 5px;
+}
+#left-panel article#createImage #submit_btn{
+    background-color: rgb(80, 170, 255);
+    font-size: medium;
+    margin: 10px;
+}
+#left-panel article#catcard {
+    background-color: bisque;
+}
 aside article{
     border-radius: 8px;
     padding: 10px;
@@ -190,7 +219,7 @@ aside article p#quote_author {
     font-weight: bold;
 }
 aside#jokes article img {
-    width: 50%;
+    width: 40%;
     margin: 10px;
 }
 aside#jokes header {

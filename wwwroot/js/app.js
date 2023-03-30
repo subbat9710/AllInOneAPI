@@ -4,8 +4,7 @@ let nasaData = {};
 let weatherData = {};
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('next_btn').addEventListener('click', getAll);
-
+  //  document.getElementById('next_btn').addEventListener('click', getAll);
     //search location
     document.getElementById('search_btn').addEventListener('click', () => {
         const search_input = document.getElementById('search_input');
@@ -17,12 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //coin changer
    function attachClickEvent() {
+     const audio = new Audio('/img/coins.mp3');
       document.getElementById('change_btn').addEventListener('click', () => {
          const amount_input = document.getElementById('amount_input');
          const amount = amount_input.value;
-         if (amount) {
+         if (amount > 0) {
               getCoin(amount);
+              audio.play();
          }
+         else {
+             alert('Enter a amount greater then zero')
+         }
      });
     }
     attachClickEvent();
@@ -43,7 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // Use default location
         getWeatherData('pittsburgh');
     }
-    
+
+    // get image data
+    document.getElementById('myForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const prompt = formData.get('prompt');
+        const n = formData.get('n');
+        const size = formData.get('size');
+
+        if (prompt && n && size) {
+        getImageData(prompt, n, size);
+        }
+    });
+
     getAll();
 });
 
@@ -263,200 +281,35 @@ function getCoin() {
               });
             }
         });
+}
+
+async function getImageData(prompt, n, size) {
+    n = parseInt(n, 10); //convert n to a number
+    try {
+      const response = await fetch('https://localhost:44356/api/nasa', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          prompt: prompt,
+          n: n,
+          size: size
+        })
+      });
+      const data = await response.json();
+      displayImage(data);
+    } catch (error) {
+      console.error(error);
     }
-// function gerWeatherData(location) {
-//     const weather_location = document.getElementById('weather_location');
-//     const weather_country = document.getElementById('weather_country');
-//     const temperature_f = document.getElementById('temperature_f');
-//     const local_time = document.getElementById('local_time');
-//     const weather_text = document.getElementById('weather_text');
-//     const weather_icon = document.getElementById('weather_icon');
-//     const weather_humidity = document.getElementById('weather_humidity');
-//     const cloud = document.getElementById('cloud');
+  }
   
-//     let url = '';
-//     if (location) {
-//       url = `https://localhost:44356/api/nasa/${location}`;
-//     } else {
-//       if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition((position) => {
-//           const latitude = position.coords.latitude;
-//           const longitude = position.coords.longitude;
-//           console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-//           url = `https://localhost:44356/api/nasa/lat=${latitude}&lon=${longitude}`;
-//           fetchWeatherData(url);
-//         });
-//       } else {
-//         console.log('Geolocation is not supported by this browser.');
-//         // Use default location
-//         url = 'https://localhost:44356/api/nasa/pittsburgh';
-//         fetchWeatherData(url);
-//       }
-//     }
-  
-//     function fetchWeatherData(url) {
-//       fetch(url)
-//         .then((response) => {
-//           return response.json();
-//         })
-//         .then((data) => {
-//           weatherData = {};
-//           weatherData['locationName'] = data.locationName;
-//           weatherData['country'] = data.country;
-//           weatherData['localTime'] = data.localTime;
-//           weatherData['text'] = data.text;
-//           weatherData['icon'] = data.icon;
-//           weatherData['temp_f'] = data.temp_f;
-//           weatherData['cloud'] = data.cloud;
-//           weatherData['humidity'] = data.humidity;
-//           weather_location.innerText = data.locationName;
-//           weather_country.innerText = data.country;
-//           temperature_f.innerText = data.temp_f;
-//           local_time.innerText = data.localTime;
-//           weather_text.innerText = data.text;
-//           weather_icon.setAttribute('src', data.icon);
-//           weather_humidity.innerText = data.humidity;
-//           cloud.innerText = data.cloud;
-//         });
-//     }
-  
-//     if (location) {
-//       fetchWeatherData(url);
-//     }
-//   }
-  
-
-// function gerWeatherData(){
-//     const location = document.getElementById('location').value;
-//     const weather_location = document.getElementById('weather_location');
-//     const weather_country = document.getElementById('weather_country');
-//     const temperature_f = document.getElementById('temperature_f');
-//     const local_time = document.getElementById('local_time');
-//     const weather_text = document.getElementById('weather_text');
-//     const weather_icon = document.getElementById('weather_icon');
-//     const weather_humidity = document.getElementById('weather_humidity');
-//     const cloud = document.getElementById('cloud');
-
-//     fetch(`https://localhost:44356/api/nasa/${location}`)
-//     .then((response) => {
-//         return response.json();
-//     })
-//     .then((data) => {
-//         weatherData = {};
-//         weatherData['locationName'] = data.locationName;
-//         weatherData['country'] = data.country;
-//         weatherData['localTime'] = data.localTime;
-//         weatherData['text'] = data.text;
-//         weatherData['icon'] = data.icon;
-//         weatherData['temp_f'] = data.temp_f;
-//         weatherData['cloud'] = data.cloud;
-//         weatherData['humidity'] = data.humidity;
-//         weather_location.innerText = data.locationName;
-//         weather_country.innerText = data.country;
-//         temperature_f.innerText = data.temp_f;
-//         local_time.innerText = data.localTime;
-//         weather_text.innerText = data.text;
-//         weather_icon.setAttribute('src', data.icon);
-//         weather_humidity.innerText = data.humidity;
-//         cloud.innerText = data.cloud;
-//     });
-
-// }
-
-
-// function saveCard() {
-//     // Get the image URL and fact text from the input fields
-//     const imgInput = document.getElementById('cat_pic');
-//     const factInput = document.getElementById('cat_fact');
-//     const imgUrl = imgInput.getAttribute('src');
-//     const factText = factInput.innerText;
-  
-//     // Create an object with the card data
-//     const cardData = {
-//       CatImgUrl: imgUrl,
-//       CatFact: factText
-//     };
-  
-//     // Send a POST request to the server to save the card data
-//     fetch(API_BASE, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(cardData)
-//     })
-//     .then(response => {
-//       if (response.ok) {
-//         alert('Card saved successfully!');
-//         refreshCollection();
-//       } else {
-//         alert('Error saving card!');
-//       }
-//     })
-//     .catch(error => {
-//       console.error('Error saving card:', error);
-//       alert('Error saving card!');
-//     });
-//   }
-  
-
-// function refreshCollection() {
-//     const collection = document.getElementById('collection');
-//     collection.innerHTML = '';
-
-//     fetch(API_BASE + '/cards')
-//         .then(response => response.json())
-//         .then(data => {
-//             data.forEach(card => {
-//                 const cardDiv = document.createElement('div');
-//                 cardDiv.classList.add('card');
-//                 const cardImg = document.createElement('img');
-//                 cardImg.src = card.CatImgUrl;
-//                 const cardFact = document.createElement('p');
-//                 cardFact.innerText = card.CatFact;
-//                 const deleteBtn = document.createElement('button');
-//                 deleteBtn.innerText = 'Delete';
-//                 deleteBtn.addEventListener('click', () => {
-//                     deleteCard(card);
-//                 });
-
-//                 cardDiv.appendChild(cardImg);
-//                 cardDiv.appendChild(cardFact);
-//                 cardDiv.appendChild(deleteBtn);
-//                 collection.appendChild(cardDiv);
-//             });
-//         })
-//         .catch(error => console.error('Error refreshing collection:', error));
-// }
-  
-// //To retrieve all the save pic and facts into the webpage
-// function getAllCards() {
-//     const collection = document.getElementById('collection');
-
-//     // Retrieve all saved cards from the server
-//     fetch(API_BASE + '/cards')
-//     .then(response => response.json())
-//     .then(cards => {
-//         // Clear the existing collection HTML
-//         collection.innerHTML = '';
-
-//         // Append each saved card to the collection
-//         cards.forEach(card => {
-//             const cardElem = document.createElement('div');
-//             cardElem.className = 'card';
-//             cardElem.innerHTML = `
-//                 <img src="${card.catImgUrl}">
-//                 <p>${card.catFact}</p>
-//             `;
-//             collection.appendChild(cardElem);
-//         });
-//     })
-//     .catch(error => {
-//         console.error('Error retrieving cards:', error);
-//         alert('Error retrieving cards!');
-//     });
-// }
-
-  
-  
-
+  function displayImage(data) {
+    const imgContainer = document.getElementById('imageContainer');
+    imgContainer.innerHTML = ''; // clear any previous image(s)
+    data.data.forEach((image) => {
+      const img = document.createElement('img');
+      img.src = image.url;
+      imgContainer.appendChild(img);
+    });
+}
