@@ -6,7 +6,7 @@ namespace NasaSpaceInfo.Service
     public class ApodApiService : IApod
     {
         private const string API_URL = "https://api.nasa.gov/planetary/";
-        private const string API_KEY = "";
+        private const string API_KEY = "sIZYtiXc0nGXrjOcbV7LnycZEDuDWKEcfJq2gY9X";
         private readonly RestClient client = new RestClient();
 
         public Apod GetApod()

@@ -13,7 +13,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 120px;
     background-color: rgb(255, 255, 255);
 }
 #description {
@@ -31,6 +30,9 @@ aside#panel-right {
 aside#end-part {
     grid-area: end-part;
 }
+aside#profile {
+    grid-area: profile;
+}
 div.about_container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -40,15 +42,29 @@ div.about_container {
     "header header header header header"
     "description description description description description"
     "panel-left main panel-right panel-right1 panel-right2"
-    ". . end-part . .";
+    ". . end-part . ."
+    ". . profile . .";
 }
 #about-page-header img {
-    width: 10%;
-    margin: 10px;
+    height: 80%;
+    padding-left: 1%;
 }
 #about-page-header h2 {
     font-size: 2.6em;
     text-align: center;
+}
+#about-page-header nav ul {
+    padding-left: 0;
+}
+#about-page-header nav li {
+    list-style-type:none;
+    display: inline;
+    padding-right: 20px;
+    font-size: 1em;
+}
+#about-page-header nav li a {
+    text-decoration: none;
+    color: black;
 }
 #description {
     margin-left: 20%;
@@ -129,6 +145,14 @@ main > article > div > img{
     text-align: center;
     font-size: x-large;
 }
+#profile > article {
+    object-fit: cover;
+    object-position: bottom;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 15px 0;
+    text-align: center;
+}
 #end-part > article div p{
     border: 1px solid silver;
     border-radius: 8px;
@@ -207,6 +231,72 @@ div.container > main > article {
 #about-page-headernav li a {
     text-decoration: none;
     color: black;
+}
+#profile > article#profile div img{
+    margin-top: 42%;
+    width: 70%;
+}
+#profile > article#profile div p{
+    font-size: 1.2em;
+    margin: 0;
+    color: rgb(53, 235, 53);
+}
+#profile > article#profile div a{
+    font-size: xx-large;
+    margin: 0;
+    color:rgb(228, 233, 227);
+}
+#profile > article#profile div p#name{
+    font-size: 1.2em;
+    margin: 0;
+    color:rgb(228, 233, 227);
+}
+.arrows {
+    width: 60px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 20px;
+  }
+  
+  .arrows path {
+    stroke: #2994D1;
+    fill: transparent;
+    stroke-width: 1px;  
+    animation: arrow 2s infinite;
+    -webkit-animation: arrow 2s infinite; 
+  }
+  
+  @keyframes arrow
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+  
+  @-webkit-keyframes arrow /*Safari and Chrome*/
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+  
+  .arrows path.a1 {
+    animation-delay:-1s;
+    -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+  }
+  
+  .arrows path.a2 {
+    animation-delay:-0.5s;
+    -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+  }
+  
+  .arrows path.a3 { 
+    animation-delay:0s;
+    -webkit-animation-delay:0s; /* Safari 和 Chrome */
 }
 @media screen and (max-width: 800px) {
     div.about_container {
