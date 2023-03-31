@@ -3,21 +3,24 @@ AllInOneAPI is a web application built with ASP.NET Web API that allows users to
 
 # Getting Started
 To use OmniAPI, simply navigate to the app's home page and you will able to view as soon as the page loaded. You will then be able to view and interact with the API's data in a user-friendly format.
-
+# :warning: <h3>In order to run this project on your machine, please use your own API-KEY</h3>
 # APIs Supported
-* NASA
+* NASA:
 The NASA API provides access to a wide range of information related to space exploration, including images, videos, and data from NASA's missions. AllInOneAPI displays historic space image with details about the photo.
 
-* CatCards
+* OpenAI:
+The OpenAI API provides access to the different AI tools. In this project I have implemented one of the features to create the images of anything you want to create. You have the options to choose the sizes of 256x256, 512x512, 1024x1024 and images upto 10.
+
+* CatCards:
 The CatCards API allows users to generate random images of cats with humorous fact captions, perfect for sharing on social media or just for a quick laugh.
 
-* Weather
+* Weather:
 The Weather API provides up-to-date weather information for any location in the world, allowing users to plan their activities and stay informed about weather conditions in their area.
 
-* Cocktails
+* Cocktails:
 The Cocktails API provides recipes for a variety of cocktails, as well as information about their ingredients and preparation.
 
-* Jokes & Quotes
+* Jokes & Quotes:
 The Jokes & Quotes API provides a collection of jokes & inspirational quotes that can be shared or used to brighten up your day.
 
 # Technologies Used
