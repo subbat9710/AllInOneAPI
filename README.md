@@ -30,7 +30,9 @@ AllInOneAPI was built with ASP.NET Web API and uses HTML, CSS, and JavaScript fo
 * Multiple APIs in one platform
 * User-friendly interface for easy navigation and interaction
 * Real-time weather updates
+* Photo generator that you can generate any kind of photos with three different sizes and limit of up to 10 photos
 * Random cat photos with humorous captions
+* Coin Changer that you can change to cents of any amounts
 * Wide variety of cocktail recipes
 * Collection of jokes and inspirational quotes
 # Future Plans
