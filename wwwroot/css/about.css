@@ -18,6 +18,47 @@ body {
 #description {
     grid-area: description;
 }
+#subscribe-popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+#popup-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(144, 224, 194);
+    padding: 20px;
+    height: 150px;
+    width: 200px;
+    border-color: slateblue;
+    border: 6px solid darkgoldenrod;
+}
+#popup-form p{
+    font-size: medium;
+    font-weight: bold;
+}
+#popup-form input{
+    font-size: medium;
+}
+#popup-form button{
+    color: rgb(12, 10, 10);
+    font-weight: bold;
+    background-color: rgb(255, 71, 71);
+}
+#popup-form label,
+#popup-form input,
+#popup-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+#popup-form button {
+    margin-top: 20px;
+}
+
 #panel-left {
     grid-area: panel-left;
 }
@@ -261,7 +302,7 @@ div.container > main > article {
   }
   
   .arrows path {
-    stroke: #2994D1;
+    stroke: #eeebf3;
     fill: transparent;
     stroke-width: 1px;  
     animation: arrow 2s infinite;
@@ -303,16 +344,19 @@ div.container > main > article {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
       justify-items: center;
+      gap: 0px;
       grid-template-areas:
         "header"
         "description"
-        "panel-left main"
+        "panel-left"
         "main"
         "panel-right"
         "panel-right1"
         "panel-right2"
+        "end-part"
+        "profile";
     }
-    #page-header {
+    #about-page-header {
         height: auto;
         width: 100%;
         padding: 0;
@@ -322,25 +366,78 @@ div.container > main > article {
         display: flex;
         align-items: center;
     }
-    #page-header img {
+    #about-page-header nav li a {
+        text-decoration: none;
+        color: black;
+    }
+    #description {
+        margin-left: 10%;
+        margin-right: 10%;
+        font-size: 1.3em;
+    }
+    #about-page-header img {
         height: 40px;
         padding-left: 2%;
         padding-right: 7%;
     }
-    #page-header nav li {
+    #about-page-header nav li {
           list-style-type:none;
           display: inline;
           padding-right: 5px;
           font-size: 1em;
     }
-    #page-header nav ul {
+    #about-page-header nav ul {
         padding-left: 10px;
     }
-    main h3 {
-        text-align: center;
-        margin: 0;
+    #about-page-header h2{
+        font-size: large;
     }
     
+    main > article {
+        object-fit: cover;
+        object-position: bottom;
+        border: 1px solid silver;
+        border-radius: 8px;
+        padding: 10px;
+        margin: 15px 0;
+        background-color: rgb(231, 207, 235);
+    }
+    
+    #panel-left > article {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    #panel-right > article {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    #panel-right1 > article {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    #panel-right2 > article {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    #end-part > article {
+        text-align: center;
+        font-size: x-large;
+    }
+    .arrows {
+        display: none;
+    }
+    main > article {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    #profile > article#profile div img {
+        margin: 0;
+        width: 70%;
+    }
   }
   @media screen and (max-width: 536px) {
     div.container {
@@ -355,54 +452,50 @@ div.container > main > article {
         "panel-right"
         "panel-right1"
         "panel-right2"
+        "end-part"
+        "profile";
       }
-    #page-header {
+    #about-page-header {
       padding-top: 10px;
       flex-wrap: wrap;
       justify-content: center;
       display: flex;
     }
-    #page-header nav ul {
+    #about-page-header nav ul {
       margin-top: 10px;
       margin-bottom: 10px;
     }
-    #weather .forecast {
-      display: inline;
-    }
-    #weather section p:not(:last-child) {
-      border-bottom: solid black 1px;
-      border-right: none;
-    }
-    aside#weather section {
-      flex-direction: column;
-    }
-    #page-header {
+    #about-page-header {
         display: flex;
         justify-content: center;
         margin-bottom: 20px;
     }
       
-    #page-header img {
-        margin-right: 10px;
+    #about-page-header img {
+        margin-left: 10%;
+        width: 30%;
     }
       
-    #page-header h1 {
+    #about-page-header h2 {
         margin: 0;
-        margin-left: 10px;
+        margin-left: 2%;
+        text-align: center;
+        font-size: 2.6em;
     }
       
-    #page-header nav {
-        margin-left: 10px;
+    #about-page-header nav {
+        margin-left: 30px;
+        text-align: center;
     }
       
-    #page-header nav ul {
+    #about-page-header nav ul {
         margin: 0;
         padding: 0;
         display: flex;
         list-style: none;
     }
       
-    #page-header nav li {
+    #about-page-header nav li {
        margin-right: 10px;
     }  
     main > article > img {
@@ -411,5 +504,12 @@ div.container > main > article {
         object-fit: cover;
         object-position: bottom;
         border-radius: 15px;  
-    }  
+    } 
+    #end-part > article > div > p {
+        color: azure;
+    } 
+    #description {
+        color: rgb(230, 227, 227);
+        font-size: larger;
+    }
 }

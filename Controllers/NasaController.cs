@@ -23,8 +23,9 @@ namespace NasaSpaceInfo.Controllers
         private IHealth health;
         private IDrinks drinks;
         private ICreateImage createImage;
+        private ISubscribe subscribeDao;
 
-        public NasaController(IApod _apod, IQuote _quote, ICatPic _catPic, ICatFact _catFact, IChuckJokes _chuckJokes, ICatFactDao _catFactDao, IWeather _weather, IHealth _health, IDrinks _drinks, ICreateImage _createImage)
+        public NasaController(IApod _apod, IQuote _quote, ICatPic _catPic, ICatFact _catFact, IChuckJokes _chuckJokes, ICatFactDao _catFactDao, IWeather _weather, IHealth _health, IDrinks _drinks, ICreateImage _createImage, ISubscribe _subscribeDao)
         {
             this.apod = _apod;
             this.quote = _quote;
@@ -36,6 +37,7 @@ namespace NasaSpaceInfo.Controllers
             this.health = _health;
             this.drinks = _drinks;
             this.createImage = _createImage;
+            this.subscribeDao = _subscribeDao;
         }
 
         [HttpGet]
@@ -121,6 +123,17 @@ namespace NasaSpaceInfo.Controllers
             ImageApiService imageApiService = new ImageApiService();
             CreateImageResponse createImageResponse = imageApiService.PostImage(createImageRequest);
             return createImageResponse;
+        }
+
+        [HttpPost("subscribe")]
+        public ActionResult<Subscribe> Subsribed(Subscribe subscribed)
+        {
+            if(subscribed != null)
+            {
+                subscribeDao.Subscribed(subscribed);
+                return Created("/api/nasa/subscribe", subscribed);
+            }
+            return null;
         }
         //[HttpGet("{ingr}")]
         //public ActionResult<Nutrient> GetHealthTips(string ingr)

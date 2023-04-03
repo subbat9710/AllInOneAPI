@@ -5,6 +5,28 @@ let weatherData = {};
 
 document.addEventListener('DOMContentLoaded', () => {
   //  document.getElementById('next_btn').addEventListener('click', getAll);
+
+    //Subscribe form
+    const popupLink = document.getElementById('subscribeLink');
+    const subscribePopUp = document.getElementById('subscribe-popup');
+    const popupForm = document.getElementById('popup-form');
+
+    popupLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        subscribePopUp.style.display = 'block';
+    });
+
+    popupForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+
+        await postSubscribeData(name, email);
+        subscribePopUp.style.display = 'none';
+    });
+
     //search location
     document.getElementById('search_btn').addEventListener('click', () => {
         const search_input = document.getElementById('search_input');
@@ -57,8 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const n = formData.get('n');
         const size = formData.get('size');
 
-        if (prompt && n && size) {
-        getImageData(prompt, n, size);
+        if (prompt && n && size) { 
+            document.getElementById('loadingIcon').style.display = 'block';  //shows while loading
+            await getImageData(prompt, n, size);
+            document.getElementById('loadingIcon').style.display = 'none'; //stops when loading is done
         }
     });
 
@@ -313,3 +337,41 @@ async function getImageData(prompt, n, size) {
       imgContainer.appendChild(img);
     });
 }
+
+async function postSubscribeData(name, email) {
+    try {
+      const response = await fetch('https://localhost:44356/api/nasa/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email
+        })
+    });
+  
+    console.log(response);
+  
+    const responseData = await response.json();
+  
+    console.log(responseData);
+  
+    if (Number(responseData.id) === 0) {
+        alert("Email already exists!Enter different Email!");
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+    } else if (response.ok) {
+        // Clear input fields
+        alert("You're successfully subscribed!");
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+  
+        // Hide popup form
+        subscribePopUp.style.display = 'none';
+       }
+    } catch (error) {
+      console.error(error);
+    }
+}  
+

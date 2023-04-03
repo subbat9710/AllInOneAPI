@@ -21,7 +21,16 @@
                 <ul>
                     <!-- <li><a href="#">Stories</a></li> -->
                     <li><a href="about.html">About</a></li>
-                    <li><a href="#">Subscribe</a></li>
+                    <li><a href="#" id="subscribeLink">Subscribe</a></li>
+                      <div id="subscribe-popup">
+                        <form id="popup-form">
+                        <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                        <p>Subscribe to get the updates!</p>
+                      </form>
+                    </div>
+                    <li><a href="login.html" id="login">Login</a></li>
                 </ul>
             </nav>
         </header>
@@ -79,6 +88,9 @@
                   <button type="submit" id="submit_btn">Generate Images</button>
                 </form>
                 <div id="imageContainer"></div>
+                <div id="loadingIcon" style="display: none;">
+                  <img src="https://usagif.com/wp-content/uploads/loading-23.gif" width="78%">
+                </div>
               </article>              
             <article id="catcard">
               <header>Cat Facts</header>

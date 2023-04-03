@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="css/about.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -17,7 +17,15 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Subscribe</a></li>
+                        <li><a href="#" id="subscribeLink">Subscribe</a></li>
+                        <div id="subscribe-popup">
+                            <form id="popup-form">
+                                <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                                <button type="submit">Subscribe</button>
+                                <p>Subscribe to get the updates!</p>
+                            </form>
+                        </div>
                     </ul>
                 </nav>
             </header>
@@ -88,12 +96,13 @@
                     <div>
                         <img src="img/ts.png">
                         <p id="name">Tula Subba | Software Developer</p>
-                        <p>If you want to colaborate on your project contact me at tula.subba23@gmail.com</p>
+                        <p>If you want to collaborate on your project contact me at tula.subba23@gmail.com</p>
                         <a href="https://www.linkedin.com/in/tulasubba/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                         <a href="https://github.com/subbat9710"><i class="fa fa-github" aria-hidden="true"></i></a>
                     </div>
                 </article>
             </aside>
         </div>
+        <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>

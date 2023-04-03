@@ -36,6 +36,7 @@ namespace NasaSpaceInfo
             services.AddTransient<ICatFact>(sp => new CatFactApiService());
             services.AddTransient<IChuckJokes>(sp => new ChuckJokesApiService());
             services.AddTransient<ICatFactDao>(sp => new CatCardSqlDao(connectionString));
+            services.AddTransient<ISubscribe>(sp => new SubscribeSqlDao(connectionString));
             services.AddTransient<IWeather>(sp => new WeatherApiService());
             services.AddTransient<IHealth>(sp => new HealthApiService());
             services.AddTransient<IDrinks>(sp => new CocktailApiService());

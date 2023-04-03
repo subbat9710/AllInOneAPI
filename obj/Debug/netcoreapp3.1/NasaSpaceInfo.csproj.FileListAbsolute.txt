@@ -31,3 +31,16 @@ C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\n
 C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Student\workspace\side-projects\NasaSpaceInfo\NasaSpaceInfo\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
