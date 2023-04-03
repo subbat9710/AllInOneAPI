@@ -2,7 +2,7 @@
 AllInOneAPI is a web application built with ASP.NET Web API that allows users to access multiple APIs from a single platform. The app currently supports six APIs: NASA, CatCards, Weather, Cocktails, and Jokes & Quotes.
 
 # Getting Started
-To use OmniAPI, simply navigate to the app's home page and you will able to view as soon as the page loaded. You will then be able to view and interact with the API's data in a user-friendly format.
+To use AllInOneAPI, simply navigate to the app's home page and you will able to view as soon as the page loaded. You will then be able to view and interact with the API's data in a user-friendly format.
 # :warning: <h3>In order to run this project on your machine, please use your own API-KEY</h3>
 # APIs Supported
 * NASA:
