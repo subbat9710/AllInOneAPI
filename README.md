@@ -41,3 +41,6 @@ I am constantly working to improve AllInOneAPI and add new APIs to this platform
 
 Contact Us
 If you have any questions or feedback about AllInOneAPI, please feel free to contact me at tula.subba23@gmail.com. I am always happy to hear from your feedback so I can improve more.
+
+### In desktop AllInOne WebApp looks like this:
+![AllInone](https://user-images.githubusercontent.com/25064570/230246227-3fc66559-5ed8-49ee-9ba6-06b3576e6f2a.png)
