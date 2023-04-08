@@ -37,6 +37,7 @@ AllInOneAPI was built with ASP.NET Web API and uses HTML, CSS, and JavaScript fo
 * Wide variety of cocktail recipes
 * Collection of jokes and inspirational quotes
 * Subscriptions functionality
+* Also implemented the Swagger API documentations for this project
 # Future Plans
 I am constantly working to improve AllInOneAPI and add new APIs to this platform. In the future, I plan to add support for additional APIs, as well as to implement new features and functionality that will make the app even more useful and user-friendly.
 
