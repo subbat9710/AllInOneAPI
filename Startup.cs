@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.OpenApi.Models;
 
 namespace NasaSpaceInfo
 {
@@ -41,11 +42,22 @@ namespace NasaSpaceInfo
             services.AddTransient<IHealth>(sp => new HealthApiService());
             services.AddTransient<IDrinks>(sp => new CocktailApiService());
             services.AddTransient<ICreateImage>(sp => new ImageApiService());
+
+            services.AddSwaggerGen(s => {
+                s.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = Configuration["APIVersion"],
+                    Title = "All In One API",
+                    Description = "Developed by Tula Subba"
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSwagger();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -56,6 +68,12 @@ namespace NasaSpaceInfo
             app.UseStaticFiles(); //to open index.html file when the program runs
 
             app.UseRouting();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "All In One API");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseAuthorization();
 
