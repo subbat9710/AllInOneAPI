@@ -25,7 +25,7 @@ The Cocktails API provides recipes for a variety of cocktails, as well as inform
 The Jokes & Quotes API provides a collection of jokes & inspirational quotes that can be shared or used to brighten up your day.
 
 # Technologies Used
-AllInOneAPI was built with ASP.NET Web API and uses HTML, CSS, and JavaScript for the front-end design.
+AllInOneAPI was built with ASP.NET Web API and uses HTML, CSS, & JavaScript for the front-end design.
 
 # Key Features:
 * Multiple APIs in one platform
