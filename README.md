@@ -3,7 +3,7 @@ AllInOneAPI is a web application built with ASP.NET Web API that allows users to
 #### In desktop AllInOne WebApp looks like this:
 ![AllInone](https://user-images.githubusercontent.com/25064570/230246227-3fc66559-5ed8-49ee-9ba6-06b3576e6f2a.png)
 # Getting Started
-To use AllInOneAPI, simply navigate to the app's home page and you will able to view as soon as the page loaded. You will then be able to view and interact with the API's data in a user-friendly format.
+To use AllInOneAPI, simply navigate to the app's home page and, you will able to view as soon as the page loaded. You will then be able to view and interact with the API's data in a user-friendly format.
 ### :warning: In order to run this project on your machine, please use your own API-KEY
 # APIs Supported
 * NASA:
