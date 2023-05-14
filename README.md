@@ -39,7 +39,7 @@ AllInOneAPI was built with ASP.NET Web API, and uses HTML, CSS, & JavaScript for
 * Subscriptions functionality
 * Also implemented the Swagger API documentations for this project
 # Future Plans
-I am constantly working to improve AllInOneAPI and add new APIs to this platform. In the future, I plan to add support for additional APIs, as well as to implement new features and functionality that will make the app even more useful and user-friendly.
+I am constantly working to improve AllInOneAPI, and add new APIs to this platform. In the future, I plan to add support for additional APIs, as well as to implement new features and functionality that will make the app even more useful and user-friendly.
 
 Contact Us
 If you have any questions or feedback about AllInOneAPI, please feel free to contact me at tula.subba23@gmail.com. I am always happy to hear from your feedback so I can improve more.
