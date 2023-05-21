@@ -16,7 +16,7 @@ The OpenAI API provides access to the different AI tools. In this project I have
 The CatCards API allows users to generate random images of cats with humorous fact captions, perfect for sharing on social media or just for a quick laugh.
 
 * Weather:
-The Weather API provides up-to-date weather information for any location in the world, allowing users to plan their activities and stay informed about weather conditions in their area.
+The Weather API provides up-to-date weather information for any location in the world, allowing users to plan their activities, and stay informed about weather conditions in their area.
 
 * Cocktails:
 The Cocktails API provides recipes for a variety of cocktails, as well as information about their ingredients and preparation.
