@@ -65,7 +65,7 @@ namespace NasaSpaceInfo
 
             app.UseHttpsRedirection();
 
-            app.UseStaticFiles(); //to open index.html file when the program runs
+            //app.UseStaticFiles(); //to open index.html file when the program runs
 
             app.UseRouting();
 
